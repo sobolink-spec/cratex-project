@@ -1,0 +1,242 @@
+html, body {
+  font-size: 16px; /* если у макета есть самый частый размер шрифта мы его указываем в основной элемент, если 16px то не надо ибо это по умолчанию, это для примера */
+  font-family: Lato , sans-serif; /* если у макета есть самый частый шрифт мы его указываем в основной элемент */
+  color: #424551; /* если у макета есть самый частый цвет текста мы его указываем в основной элемент */
+}
+
+.wrapper {
+  min-height: 100%; /* чтоб страница была не меньше 100% */
+  width: 100%;
+  overflow: hidden; /* чтоб спрятать непомещающийся контент */
+}
+
+.container {
+  max-width: 1260px; /* чтоб стр не была больше 1230 и могла уменьшаться + 30px(15+15) сверху из за отступа */
+  padding: 0 15px; /* стандартный отступ по бокам чтобы не прилипать к краям */
+  margin: 0 auto; /* центрирование по горизонтали */
+  height: 100%;
+}
+
+.button {
+  display: inline-block;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(45deg, #ff3f3a 0%, #f75e05 100%);
+  border-radius: 4px;
+  padding: 0px 40px;
+  height: 52px;
+  line-height: 325%;
+  letter-spacing: 0.03em;
+  text-align: center;
+  white-space: nowrap;
+  transition: 0.3s; /* плавное увеличение */
+}
+
+.button__empty{
+  display: inline-block;
+  font-weight: 700;
+  color: #ff3f3a;
+  background: transparent;
+  border: 1.5px solid #ff3f3a;
+  border-radius: 4px;
+  padding: 0px 40px;
+  height: 52px;
+  line-height: 325%;
+  letter-spacing: 0.03em;
+  text-align: center;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.button:hover , .button__empty:hover {
+  transform: scale(1.05); /* при наведении увеличиваем кнопку на 5% */
+}
+
+
+/* ---------------------------------------------------------- */
+
+.header {
+  font-weight: 700;
+  background: url(../images/decor/header/shapes-bg.svg) 50% 40% / cover no-repeat , linear-gradient(45deg, rgba(255, 63, 58, 0.2) 0%, rgba(247, 94, 5, 0.2) 100%);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__top-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.header__logo {
+  margin-right: 60px;
+  transition: 0.3s;
+}
+
+.header__logo:hover {
+  transform: scale(1.05);
+}
+
+.header__nav {
+  margin-right: auto;
+}
+
+.header__nav-list {
+  display: flex;
+}
+
+.header__nav-item {
+  margin-right: 40px;
+}
+
+.header__nav-item:last-child {
+  margin-right: 0;
+}
+
+.header__nav-link {
+  font-weight: 700;
+  line-height: 160%;
+  color: #424551;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.header__nav-link:hover {
+  color: #ff3f3a;
+}
+
+.header__btn-box {
+  display: flex;
+  align-items: center;
+}
+
+.header__top-btn {
+  margin-right: 36px;
+}
+
+.header__user-nav {
+  position: relative;
+  padding-left: 28px;
+}
+
+.header__user-nav::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%); /* выравниваем лого к тексту */
+  display: block;
+  background: url(../images/icons/user-icon.svg) no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.header__user-btn {
+  line-height: 160%;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+
+.header__user-btn:hover {
+  color: #ff3f3a;
+}
+
+/* ========================================================= */
+
+.header__body {
+  flex-grow: 1; /* чтобы хедер занимал все свободное пространство */
+}
+
+.header__body-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1e212c;
+  margin: auto 0;
+}
+
+.header__content {
+  margin-right: 30px;
+}
+
+.header__play {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 24px;
+  transition: all 0.3s;
+}
+
+.header__play:hover {
+  color: #ff3f3a;
+  transform: scale(1.05);
+}
+
+.header__play svg {
+  margin-right: 16px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.header__play:hover svg{
+  box-shadow: 0 0 0 16px rgba(255, 63, 58, 0.12); /* 0.12 прозрачность */
+  transform: scale(1.05);
+}
+
+.header__title {
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 130%;
+  letter-spacing: 0.02em;
+  max-width: 500px;
+  margin-bottom: 60px;
+}
+
+.header__content-buttons {
+  display: flex;
+}
+
+.header__content-btn {
+  margin-right: 24px;
+}
+
+.header__content-btn:last-child {
+  margin-right: 0px;
+}
+
+.header__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1e212c;
+  margin-bottom: 80px;
+}
+
+/* создание точек как в макете, с пощощью > обращаемся к спану первого порядка и не трогаем вложенные спаны */
+.header__row>span {
+  background: #ff3f3a;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0 15px; /* чтобы не прилипали */
+}
+
+.header__row-item {
+  display: flex;
+  align-items: center;
+}
+
+.header__row-item span {
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 130%;
+  margin-right: 12px;
+}
+
